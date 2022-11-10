@@ -8,7 +8,7 @@ import {
 	Menu,
 	MenuRight,
 	Row,
-	Wrapper,
+	Wrapper
 } from "./styles";
 
 const Header = () => {
