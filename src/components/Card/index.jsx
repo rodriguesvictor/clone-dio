@@ -15,7 +15,7 @@ import {
 const Card = () => {
 	return (
 		<CardContainer>
-			<ImageBackground />
+			<ImageBackground  src="https://eit.europa.eu/sites/default/files/shutterstock_739595833.jpg"/>
 			<Content>
 				<UserInfo>
 					<UserPicture src="https://avatars.githubusercontent.com/u/57380118?v=4"/>
