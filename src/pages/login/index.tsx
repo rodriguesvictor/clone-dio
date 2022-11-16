@@ -20,6 +20,7 @@ import {
 	TitleLogin,
 	Wrapper,
 } from "./styles";
+import { IFormData } from "./types";
 
 const schema = yup
 	.object({
@@ -35,16 +36,16 @@ const Login = () => {
 		control,
 		handleSubmit,
 		formState: { errors },
-	} = useForm({
+	} = useForm<IFormData>({
 		resolver: yupResolver(schema),
 		mode: "onChange",
 	});
 
 
-	const onSubmit = async formData => {
+	const onSubmit = async (formData: IFormData) => {
 		try{
 			const { data } = await api.get(`users?email=${formData.email}&senha=${formData.password}`);
-			if (data.length == 1) {
+			if (data.length === 1) {
 				navigate("/feed");
 			} else {
 				alert('Email ou senha inválido!');
